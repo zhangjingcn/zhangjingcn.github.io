@@ -16,7 +16,7 @@
 title: shaoyin.zj's blog
 #email: shaoyin.zj
 #description: > # this means to ignore newlines until "baseurl:"
-  shaoyin.zj's blog
+#  shaoyin.zj's blog
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://zhangjingcn.github.io" # the base hostname & protocol for your site
 #twitter_username: jekyllrb
