@@ -14,8 +14,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: shaoyin.zj's blog
-email: shaoyin.zj
-description: > # this means to ignore newlines until "baseurl:"
+#email: shaoyin.zj
+#description: > # this means to ignore newlines until "baseurl:"
   shaoyin.zj's blog
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://zhangjingcn.github.io" # the base hostname & protocol for your site
