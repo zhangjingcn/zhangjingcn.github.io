@@ -1,6 +1,12 @@
-在运行期获取java泛型类型的方法
-========
+---
+layout: post
+title:  "在运行期获取java泛型类型的方法"
+date:   2016-10-14 10:23:39 +0800
+categories: java
+---
+
 ## 问题的来由 ##
+
 Google的[Guice](https://github.com/google/guice "Guice")是一个轻量级的DI框架，在进行依赖关系的解析时，能自动将一个模型类T与它的模型提供者Provider<T>进行关联，也就是Guice能够解析Provider<T>中的泛型类型T。学习了一下源码，为了在运行时获取泛型的类型，Guice提供了TypeLiteral<T>类，继承了TypeLiteral<T>的类可以获取到其泛型类型。
 
 ## 学习的过程 ##
@@ -56,4 +62,5 @@ Java API提供了Class.getGenericSuperclass方法返回Type表示其直接超类
 其中需要注意的是，其原理和刚才分析的是一样的，所以不能直接使用<code>new ArrayList<String>()</code>作为函数的参数，而是要像例子中一样，创建其子类，如<code>new ArrayList<String>(){}</code>.
 
 ## 总结 ##
+
 通过这个问题学习到了一种在运行期能够获取泛型类型的方法，也加深了对泛型的理解。
