@@ -7,11 +7,11 @@ categories: java
 
 ## 问题的来由 ##
 
-Google的[Guice](https://github.com/google/guice "Guice")是一个轻量级的DI框架，在进行依赖关系的解析时，能自动将一个模型类T与它的模型提供者Provider<T>进行关联，也就是Guice能够解析Provider<T>中的泛型类型T。学习了一下源码，为了在运行时获取泛型的类型，Guice提供了TypeLiteral<T>类，继承了TypeLiteral<T>的类可以获取到其泛型类型。
+Google的[Guice](https://github.com/google/guice "Guice")是一个轻量级的DI框架，在进行依赖关系的解析时，能自动将一个模型类T与它的模型提供者``Provider<T>``进行关联，也就是Guice能够解析``Provider<T>``中的泛型类型T。学习了一下源码，为了在运行时获取泛型的类型，Guice提供了``TypeLiteral<T>``类，继承了``TypeLiteral<T>``的类可以获取到其泛型类型。
 
 ## 学习的过程 ##
 
-而这与我对泛型的理解是不一样的，以前学到的是泛型信息在编译期会擦除，在运行时是无法获取到泛型类型的，这主要是为了实现向后兼容，不管一个类型Class<T>，不管它的泛型类型是什么，在运行时它都是同一个类型，比如说下面的表达式是成立的。
+而这与我对泛型的理解是不一样的，以前学到的是泛型信息在编译期会擦除，在运行时是无法获取到泛型类型的，这主要是为了实现向后兼容，不管一个类型``Class<T>``，不管它的泛型类型是什么，在运行时它都是同一个类型，比如说下面的表达式是成立的。
 
     assert new ArrayList<String>().getClass() == new ArrayList<Integer>().getClass();
     
@@ -30,7 +30,7 @@ Google的[Guice](https://github.com/google/guice "Guice")是一个轻量级的DI
 
 上面的测试代码执行后返回“class java.lang.String”，实现了获取泛型类型。MyGenericClass类有一个泛型T，MyStringSubClass继承了MyGenericClass并赋值了T=String。在这种情况下， java编译器能够在MyStringSubClass的字节码中记录下它继承的MyGenericClass类的泛型类型String。之所以这种情况下编译器能够记录下泛型信息，是因为MyStringSubClass能够确定T=String,不需要擦除泛型信息来实现向后兼容。
 
-所以回到Guice的例子中，Guice通过TypeLiteral<T>类，继承TypeLiteral<T>的子类都可以通过这种方法获取到继承基类TypeLiteral时指定的泛型类型。
+所以回到Guice的例子中，Guice通过``TypeLiteral<T>``类，继承``TypeLiteral<T>``的子类都可以通过这种方法获取到继承基类TypeLiteral时指定的泛型类型。
 
 Java API提供了Class.getGenericSuperclass方法返回Type表示其直接超类，如果这个超类是一个泛型类，那么返回类型实际是ParameterizedType，其getActualTypeArguments方法以数组的形式存储了其多个泛型参数。
 
