@@ -58,9 +58,9 @@ Java API提供了Class.getGenericSuperclass方法返回Type表示其直接超类
     	}
 	}
 
-这段代码的返回值是<code>class java.lang.String class java.lang.Integer</code>
-其中需要注意的是，其原理和刚才分析的是一样的，所以不能直接使用<code>new ArrayList<String>()</code>
-作为函数的参数，而是要像例子中一样，创建其子类，如<code>new ArrayList<String>(){}</code>
+这段代码的返回值是``class java.lang.String class java.lang.Integer``
+其中需要注意的是，其原理和刚才分析的是一样的，所以不能直接使用``new ArrayList<String>()``
+作为函数的参数，而是要像例子中一样，创建其子类，如``new ArrayList<String>(){}``
 .
 
 ## 总结 ##
