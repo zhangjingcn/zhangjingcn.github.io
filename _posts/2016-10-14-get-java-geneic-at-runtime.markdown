@@ -66,3 +66,10 @@ Java API提供了Class.getGenericSuperclass方法返回Type表示其直接超类
 ## 总结 ##
 
 通过这个问题学习到了一种在运行期能够获取泛型类型的方法，也加深了对泛型的理解。
+
+## 参考 ##
+
+http://stackoverflow.com/questions/937933/where-are-generic-types-stored-in-java-class-files
+https://www.javacodegeeks.com/2013/12/advanced-java-generics-retreiving-generic-type-arguments.html
+http://rednaxelafx.iteye.com/blog/586212
+http://www.oschina.net/question/946569_233598?fromerr=suQBoxXj
