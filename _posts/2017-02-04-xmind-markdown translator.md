@@ -5,8 +5,6 @@ date:   2017-2-4 11:25:00 +0800
 categories: nodejs
 ---
 
-# xmind-markdown translator
-
 ## introduction
 
 This tool inspired by one of my colleague who just use xmind to make summary. Xmind is good at mind mapping, it seem that when you read a book or article, xmind can help you quickly summarize the key point. But if you want to share it with others, xmind seems a little trouble. This tool help you translate xmind file to markdown syntax. In future, it may support markdown syntax to xmind.
